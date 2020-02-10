@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Ermington Public School P&C Voluntary Contribution Form</title>
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+  <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <link rel="shortcut icon" href="images/favicon.png">
+
+  <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+  <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-red.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+
+    table {
+      font-size: 1.5em;
+    }
+
+    .rowTotal {
+      text-align: right;
+    }
+
+    #amount li {
+      display: inline;
+      list-style-type: none;
+      max-width: 4em;
+      min-width: 4em;
+      padding: 0.7em;
+      line-height: 3em;
+      margin: 0.1em;
+      border-radius: 1.5em;
+      border-width: 1px;
+      background-color: cyan;
+      color: darkblue;
+      cursor: pointer;
+    }
+
+    #amount li.suggested{
+      border-width: 5px;
+      border-color: lime;
+      border-style: double;
+      
+    }
+
+    #amount li.selected {
+      background-color: lightgreen;
+    }
+
+    #amount li:hover {
+      border-width: 4px;
+      border-color: darkorange;
+      background-color: rgba(4, 12, 27, 0.644);
+      }
+  </style>
+</head>
+
+<body>
+  <div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
+    <header
+      class="demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">Ermington Public School P&C</span>
+        <div class="mdl-layout-spacer"></div>
+      </div>
+    </header>
+    <div class="demo-ribbon"></div>
+    <main class="demo-main mdl-layout__content">
+      <div class="demo-container mdl-grid">
+        <div
+          class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+
+          <h3>Voluntary Contribution Form</h3>
+          <p>
+            Below is a list of voluntary P&C contributions for Ermington Public School. Monies raised from the voluntary
+            contributions go towards funding important educational resources and infrastructure at the school.
+            They will also help with the maintenance of the school grounds.
+            <p>
+              In previous years this included IT resources such as laptops and iPads, air conditioning units in the
+              computer lab, english and maths resources, the sunshade behind the kindergarten classrooms, in class flip
+              tables and funding for extra teaching resources. </p>
+          </p>
+          <form class="border border-light p-5">
+
+            <p class="h4 mb-4 text-center">Details (for receipt)</p>
+
+            <input name="email" type="email" name="email" id="email" class="form-control mb-4" placeholder="E-mail">
+
+            <input name="firstName" type="text" id="firstName" class="form-control mb-4" placeholder="First Name">
+
+            <input name="familyName" type="text" id="familyName" class="form-control mb-4" placeholder="Family Name">
+
+            <input name="studentName" type="text" id="studentName" class="form-control mb-4"
+              placeholder="Eldest Student's Name">
+
+
+            <select name="studentClass" class="form-control mb-4" placeholder="Eldest Student's Class">
+              <option value="NONE">Select Eldest Child's Class</option>
+              <option value="KC">KC</option>
+              <option value="KS">KS</option>
+              <option value="KY">KY</option>
+              <option value="1A">1A</option>
+              <option value="1/2W">1/2W</option>
+              <option value="2D">2D</option>
+              <option value="2T">2T</option>
+              <option value="3J">3J</option>
+              <option value="3W">3W</option>
+              <option value="4D">4D</option>
+              <option value="4L">4L</option>
+              <option value="5H">5H</option>
+              <option value="5M">5M</option>
+              <option value="6/5L">6/5L</option>
+              <option value="6C">6C</option>
+              <option value="6G">6G</option>
+            </select>
+            <div class="card mb-4">
+              <div class="card-body">
+                <p>Which fund would you like to contribute to?</p>
+                <!-- Group of material radios - option 1 -->
+                <div class="form-check">
+                  <input type="radio" class="form-check-input" id="fundGeneral" name="fund" value="general" checked
+                    onchange="fundChanged()">
+                  <label class="form-check-label" for="oneChild">P&C General Contribution Fund – (Non Tax-
+                    Deductible)</label>
+                  <p>Used to fund additional school equipment, education and teaching resources.</p>
+                </div>
+                <div class="form-check">
+                  <input type="radio" class="form-check-input" id="fundBuilding" name="fund" value="building"
+                    onchange="fundChanged()">
+                  <label class="form-check-label" for="twoChild">P&C Building Fund – (100% Tax- Deductible
+                    donation)</label>
+                  <p>Used to purchase or replace fixed asset items – ie. new buildings, building improvements, air
+                    conditioning or other permanent fixtures</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <div class="card-body">
+                <p>How many students do you have at Ermington?</p>
+                <!-- Group of material radios - option 1 -->
+                <div class="form-check">
+                  <input type="radio" class="form-check-input" id="oneChild" name="numberChildren" value="1" checked
+                    onchange="numChildrenChanged()">
+                  <label class="form-check-label" for="oneChild">One student (suggested donation $ 60.00)</label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" class="form-check-input" id="twoChild" name="numberChildren" value="2"
+                    onchange="numChildrenChanged()">
+                  <label class="form-check-label" for="twoChild">More than one stundent(suggested donation $
+                    100.00)</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <div class="card-body">
+                <p>Would you like to make a $50 contribution toward Ground Maintenance – (Non Tax- Deductible)?</p>
+                <!-- Group of material radios - option 1 -->
+                <div class="form-check">
+                  <input type="radio" class="form-check-input" id="groundMaintenanceYes" name="groundMaintenance"
+                    value="yes" checked onchange="groundMaintenanceChanged()">
+                  <label class="form-check-label" for="oneChild">Yes</label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" class="form-check-input" id="groundMaintenanceNo" name="groundMaintenance"
+                    value="no" onchange="groundMaintenanceChanged()">
+                  <label class="form-check-label" for="twoChild">No</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="card text-center">
+              <input type="hidden" id="amount" val="80" >
+              <div class="card-body">
+                <ul id="amount" onclick="amountClicked(event);">
+                  <li value="20">$20</li>
+                  <li value="40" class="suggested">$40</li>
+                  <li value="60">$60</li>
+                  <li value="80">$80</li>
+                  <li value="100">$100</li>
+                  <li value="150">$150</li>
+                  <li value="250">$250</li>
+                  <li value="300">$300</li>
+                  <li value="500">$500</li>
+                </ul>
+              </div>
+            </div>
+
+            <p class="h4 mb-4 text-center">Totals</p>
+            <div class="card mb-4">
+              <div class="card-body">
+                <table>
+                  <tr>
+                    <td class="col-sm-9">Suggested Contribution (One Child)</td>
+                    <td class="col-sm-3 rowTotal" id="suggestedContribution">$80.00</td>
+                  </tr>
+                  <tr>
+                    <td class="col-sm-9">Grounds maintenance contribution</td>
+                    <td class="col-sm-3 rowTotal" id="groundsContribution">$50.00</td>
+                  </tr>
+                  <tr>
+                    <td class="col-sm-9">Total:</td>
+                    <td class="col-sm-3 rowTotal" id="totalContribution">$130.00</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+
+            <button class="btn btn-info btn-block my-4" type="submit">Proceed to Payment</button>
+
+
+          </form> <!-- Default form register -->
+          <form id="payButton" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="4MYP8L6PVUE3Q">
+            <table>
+              <tr>
+                <td><input type="hidden" name="on0" value="Contribution">Contribution</td>
+              </tr>
+              <tr>
+                <td><select name="os0">
+                    <option value="opt1">opt1 $20.00 AUD</option>
+                    <option value="opt2">opt2 $40.00 AUD</option>
+                    <option value="opt3">opt3 $60.00 AUD</option>
+                    <option value="opt4">opt4 $80.00 AUD</option>
+                    <option value="opt5">opt5 $100.00 AUD</option>
+                    <option value="opt6">opt6 $130.00 AUD</option>
+                    <option value="opt7">opt7 $150.00 AUD</option>
+                    <option value="opt8">opt8 $200.00 AUD</option>
+                    <option value="opt9">opt9 $300.00 AUD</option>
+                    <option value="opt10">opt10 $0.50 AUD</option>
+                  </select> </td>
+              </tr>
+            </table>
+            <input type="hidden" name="currency_code" value="AUD">
+            <input type="image" src="https://www.paypalobjects.com/en_AU/i/btn/btn_paynowCC_LG.gif" border="0"
+              name="submit" alt="PayPal – The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_AU/i/scr/pixel.gif" width="1" height="1">
+          </form>
+
+
+        </div>
+      </div>
+      <footer class="demo-footer mdl-mini-footer">
+        <div class="mdl-mini-footer--left-section">
+          <ul class="mdl-mini-footer--link-list">
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Privacy and Terms</a></li>
+            <li><a href="#">User Agreement</a></li>
+          </ul>
+        </div>
+      </footer>
+    </main>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+  <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <script>
+    function UUID() {
+      var uuid = (function () {
+        var i,
+          c = "89ab",
+          u = [];
+        for (i = 0; i < 36; i += 1) {
+          u[i] = (Math.random() * 16 | 0).toString(16);
+        }
+        u[8] = u[13] = u[18] = u[23] = "-";
+        u[14] = "4";
+        u[19] = c.charAt(Math.random() * 4 | 0);
+        return u.join("");
+      })();
+      return {
+        toString: function () {
+          return uuid;
+        },
+        valueOf: function () {
+          return uuid;
+        }
+      };
+    }
+
+    var selectedFund = "general";
+    var numChildren = 1;
+    var groundMaintenance = true;
+    var amountToPay = 130;
+
+    var fundChanged = function () {
+      selectedFund = $("#fundGeneral")[0].checked ? "general" : "building";
+      console.log("fund changed:" + selectedFund);
+    }
+
+    var numChildrenChanged = function () {
+      numChildren = $("#oneChild")[0].checked ? 1 : 2;
+      console.log("numChildren changed:" + numChildren);
+
+    }
+
+    var groundMaintenanceChanged = function () {
+      groundMaintenance = $("#groundMaintenanceYes")[0].checked ? true : false;
+      console.log("groundMaintenance changed:" + groundMaintenance);
+
+    }
+
+var amountClicked = function(event){
+  var target = $(event.target);
+  var amount = target.val();
+  $("#amount li").removeClass("selected");
+  $(target).addClass("selected");
+  $("#amount").val(amount);
+  console.log("amount changed:" + amount);
+}
+
+    var action = $("#payButton").attr('action');
+    $("#payButton").attr('action', action + "?custom=" + UUID());
+  </script>
+</body>
+
+</html>
