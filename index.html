@@ -71,22 +71,23 @@
       cursor: pointer;
     }
 
-    #amount li.suggested{
+    #amount li.suggested {
       border-width: 5px;
-      border-color: lime;
+      border-color: darkorchid;
       border-style: double;
-      
+
     }
 
     #amount li.selected {
-      background-color: lightgreen;
+      background-color: darkgreen;
+      color: lightskyblue;
     }
 
     #amount li:hover {
       border-width: 4px;
       border-color: darkorange;
       background-color: rgba(4, 12, 27, 0.644);
-      }
+    }
   </style>
 </head>
 
@@ -190,7 +191,7 @@
 
             <div class="card mb-4">
               <div class="card-body">
-                <p>Would you like to make a $50 contribution toward Ground Maintenance – (Non Tax- Deductible)?</p>
+                <p>Would you like to make an additional $50 contribution toward Ground Maintenance – (Non Tax- Deductible)?</p>
                 <!-- Group of material radios - option 1 -->
                 <div class="form-check">
                   <input type="radio" class="form-check-input" id="groundMaintenanceYes" name="groundMaintenance"
@@ -205,15 +206,22 @@
               </div>
             </div>
 
-            <div class="card text-center">
-              <input type="hidden" id="amount" val="80" >
+            <div class="card text-center" >
+              <div class="card text-center" style="margin:0.5em;">
+                <div class="card-body">
+                  <snall>This shows your suggested student contribution. If your circumstances prevent you paying this much - or
+                    allow you to give more then use the buttons to adjust the amount.</small>
+                </div>
+              </div>
+              <input type="hidden" id="childAmount" val="60">
               <div class="card-body">
                 <ul id="amount" onclick="amountClicked(event);">
                   <li value="20">$20</li>
-                  <li value="40" class="suggested">$40</li>
+                  <li value="40">$40</li>
                   <li value="60">$60</li>
                   <li value="80">$80</li>
                   <li value="100">$100</li>
+                  <li value="130">$130</li>
                   <li value="150">$150</li>
                   <li value="250">$250</li>
                   <li value="300">$300</li>
@@ -227,7 +235,7 @@
               <div class="card-body">
                 <table>
                   <tr>
-                    <td class="col-sm-9">Suggested Contribution (One Child)</td>
+                    <td class="col-sm-9">Suggested Contribution <span id="childType">(One Child)</span></td>
                     <td class="col-sm-3 rowTotal" id="suggestedContribution">$80.00</td>
                   </tr>
                   <tr>
@@ -317,8 +325,19 @@
 
     var selectedFund = "general";
     var numChildren = 1;
-    var groundMaintenance = true;
-    var amountToPay = 130;
+    var childContribution = 60;
+    var childDescription = "One Child"
+    var groundMaintenance = 50;
+    var totalContribution= 110;
+
+    var updateSuggested = function(){
+      suggestedAmount = childContribution;
+      selectedAmount = $("#childAmount").val();
+      if(selectedAmount==60 || selectedAmount==100){
+        setSelectedAmount(suggestedAmount);
+      }
+      setSuggestedAmount(suggestedAmount);
+    };
 
     var fundChanged = function () {
       selectedFund = $("#fundGeneral")[0].checked ? "general" : "building";
@@ -328,26 +347,57 @@
     var numChildrenChanged = function () {
       numChildren = $("#oneChild")[0].checked ? 1 : 2;
       console.log("numChildren changed:" + numChildren);
-
+      childContribution = numChildren==1?60:100;
+      childDescription = numChildren==1?"One Child":"More than one child";
+      updateSuggested();
+      updateSummary();
     }
 
     var groundMaintenanceChanged = function () {
-      groundMaintenance = $("#groundMaintenanceYes")[0].checked ? true : false;
+      groundMaintenance = $("#groundMaintenanceYes")[0].checked ? 50 : 0;
       console.log("groundMaintenance changed:" + groundMaintenance);
-
+      updateSummary();
     }
 
-var amountClicked = function(event){
-  var target = $(event.target);
-  var amount = target.val();
-  $("#amount li").removeClass("selected");
-  $(target).addClass("selected");
-  $("#amount").val(amount);
-  console.log("amount changed:" + amount);
-}
+    var amountClicked = function (event) {
+      var target = $(event.target);
+      var amount = target.val();
+      $("#amount li").removeClass("selected");
+      $(target).addClass("selected");
+      $("#childAmount").val(amount);
+      console.log("amount changed:" + amount);
+      updateSummary();
+    }
+
+    var setSuggestedAmount= function(amount){
+      $("#amount li").removeClass("suggested");
+      $("#amount li[value='"+amount+"']")
+        .addClass("suggested");
+    }
+
+    var setSelectedAmount= function(amount){
+      $("#amount li").removeClass("selected");
+      $("#amount li[value='"+amount+"']")
+        .addClass("selected");
+      $("#childAmount").val(amount)  
+    }
 
     var action = $("#payButton").attr('action');
     $("#payButton").attr('action', action + "?custom=" + UUID());
+    
+    var updateSummary = function(){
+      $("#childType").text(childDescription);
+      var childAmount = $("#childAmount").val();
+      $("#suggestedContribution").text(childAmount)
+      $("#groundsContribution").text(groundMaintenance)
+      totalContribution = Number(childAmount)+Number(groundMaintenance);
+      $("#totalContribution").text(totalContribution)
+    }
+    setSelectedAmount(childContribution);
+    updateSuggested();
+    updateSummary();
+
+
   </script>
 </body>
 
