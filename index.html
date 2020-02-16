@@ -88,6 +88,17 @@
       border-color: darkorange;
       background-color: rgba(4, 12, 27, 0.644);
     }
+
+    .arrow {
+      font-size: 12pt;
+      height: 1.2em;
+    }
+
+    input:invalid{
+      border-color: crimson;
+      border-style: solid;
+      border-width: 2;
+    }
   </style>
 </head>
 
@@ -116,39 +127,77 @@
               computer lab, english and maths resources, the sunshade behind the kindergarten classrooms, in class flip
               tables and funding for extra teaching resources. </p>
           </p>
-          <form class="border border-light p-5">
+          <form id='contribForm' class="border border-light p-5">
 
             <p class="h4 mb-4 text-center">Details (for receipt)</p>
+            <small>All fields are required for submission.</small>
 
-            <input name="email" type="email" name="email" id="email" class="form-control mb-4" placeholder="E-mail">
+            <div class="form-row">
+              <div class="form-group col-md-10 col-xs-10">
+                <input class="p-2 form-control" name="email" type="email" name="email" id="email" placeholder="E-mail" required>
+              </div>
+              <div class="form-group col-md-2 col-xs-2">
+                <img class="arrow" src="images/arrow-left.svg">
+                <img class="arrow" src="images/tick.svg">
 
-            <input name="firstName" type="text" id="firstName" class="form-control mb-4" placeholder="First Name">
+              </div>
+            </div>
 
-            <input name="familyName" type="text" id="familyName" class="form-control mb-4" placeholder="Family Name">
+            <div class="form-row">
+              <div class="form-group col-md-10 col-xs-10">
+                <input class="p-2 form-control" name="firstName" type="text" id="firstName" class="form-control mb-4" placeholder="First Name" required>
+              </div>
+              <div class="form-group col-md-2 col-xs-2">
+                <img class="arrow" src="images/arrow-left.svg">
+              </div>
+            </div>
 
-            <input name="studentName" type="text" id="studentName" class="form-control mb-4"
-              placeholder="Eldest Student's Name">
+            <div class="form-row">
+              <div class="form-group col-md-10 col-xs-10">
+                <input class="p-2 form-control" name="familyName" type="text" id="familyName"  placeholder="Family Name" required>
+              </div>
+              <div class="form-group col-md-2 col-xs-2">
+                <img class="arrow" src="images/arrow-left.svg">
+              </div>
+            </div>
 
+            <div class="form-row">
+              <div class="form-group col-md-10 col-xs-10">
+                <input class="p-2 form-control" name="studentName" type="text" id="studentName" 
+                placeholder="Eldest Student's Name" required>
+              </div>
+              <div class="form-group col-md-2 col-xs-2">
+                <img class="arrow" src="images/arrow-left.svg">
+              </div>
+            </div>
 
-            <select name="studentClass" class="form-control mb-4" placeholder="Eldest Student's Class">
-              <option value="NONE">Select Eldest Child's Class</option>
-              <option value="KC">KC</option>
-              <option value="KS">KS</option>
-              <option value="KY">KY</option>
-              <option value="1A">1A</option>
-              <option value="1/2W">1/2W</option>
-              <option value="2D">2D</option>
-              <option value="2T">2T</option>
-              <option value="3J">3J</option>
-              <option value="3W">3W</option>
-              <option value="4D">4D</option>
-              <option value="4L">4L</option>
-              <option value="5H">5H</option>
-              <option value="5M">5M</option>
-              <option value="6/5L">6/5L</option>
-              <option value="6C">6C</option>
-              <option value="6G">6G</option>
-            </select>
+            <div class="form-row">
+              <div class="form-group col-md-10 col-xs-10">
+                <select class="p-2 form-control" name="studentClass" placeholder="Eldest Student's Class" required>
+                  <option value="" disabled selected>Select option</option>
+                  <option value="KC">KC</option>
+                  <option value="KS">KS</option>
+                  <option value="KY">KY</option>
+                  <option value="1A">1A</option>
+                  <option value="1/2W">1/2W</option>
+                  <option value="2D">2D</option>
+                  <option value="2T">2T</option>
+                  <option value="3J">3J</option>
+                  <option value="3W">3W</option>
+                  <option value="4D">4D</option>
+                  <option value="4L">4L</option>
+                  <option value="5H">5H</option>
+                  <option value="5M">5M</option>
+                  <option value="6/5L">6/5L</option>
+                  <option value="6C">6C</option>
+                  <option value="6G">6G</option>
+                </select>
+              </div>
+              <div class="form-group col-md-2 col-xs-2">
+                <img class="arrow" src="images/arrow-left.svg">
+              </div>
+            </div>
+
             <div class="card mb-4">
               <div class="card-body">
                 <p>Which fund would you like to contribute to?</p>
@@ -176,14 +225,14 @@
                 <p>How many students do you have at Ermington?</p>
                 <!-- Group of material radios - option 1 -->
                 <div class="form-check">
-                  <input type="radio" class="form-check-input" id="oneChild" name="numberChildren" value="1" checked
+                  <input type="radio" class="form-check-input" id="oneChild" name="numberChildren" value="1"
                     onchange="numChildrenChanged()">
                   <label class="form-check-label" for="oneChild">One student (suggested donation $ 60.00)</label>
                 </div>
                 <div class="form-check">
-                  <input type="radio" class="form-check-input" id="twoChild" name="numberChildren" value="2"
+                  <input type="radio" class="form-check-input" id="twoChild" name="numberChildren" value="2" checked
                     onchange="numChildrenChanged()">
-                  <label class="form-check-label" for="twoChild">More than one stundent(suggested donation $
+                  <label class="form-check-label" for="twoChild">More than one student(suggested donation $
                     100.00)</label>
                 </div>
               </div>
@@ -191,7 +240,8 @@
 
             <div class="card mb-4">
               <div class="card-body">
-                <p>Would you like to make an additional $50 contribution toward Ground Maintenance – (Non Tax- Deductible)?</p>
+                <p>Would you like to make an additional $50 contribution toward Ground Maintenance – (Non Tax-
+                  Deductible)?</p>
                 <!-- Group of material radios - option 1 -->
                 <div class="form-check">
                   <input type="radio" class="form-check-input" id="groundMaintenanceYes" name="groundMaintenance"
@@ -206,10 +256,11 @@
               </div>
             </div>
 
-            <div class="card text-center" >
+            <div class="card text-center">
               <div class="card text-center" style="margin:0.5em;">
                 <div class="card-body">
-                  <snall>This shows your suggested student contribution. If your circumstances prevent you paying this much - or
+                  <snall>This shows your suggested student contribution. If your circumstances prevent you paying this
+                    much - or
                     allow you to give more then use the buttons to adjust the amount.</small>
                 </div>
               </div>
@@ -250,11 +301,12 @@
               </div>
             </div>
 
-            <button class="btn btn-info btn-block my-4" type="submit">Proceed to Payment</button>
+            <button class="btn btn-info btn-block my-4" onclick="submitContribution(event)">Proceed to Payment</button>
 
 
           </form> <!-- Default form register -->
-          <form id="payButton" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <form id='contribOnly' style="visibility: hidden;" action="https://www.paypal.com/cgi-bin/webscr"
+            method="post" target="_top">
             <input type="hidden" name="cmd" value="_s-xclick">
             <input type="hidden" name="hosted_button_id" value="4MYP8L6PVUE3Q">
             <table>
@@ -263,16 +315,16 @@
               </tr>
               <tr>
                 <td><select name="os0">
-                    <option value="opt1">opt1 $20.00 AUD</option>
-                    <option value="opt2">opt2 $40.00 AUD</option>
-                    <option value="opt3">opt3 $60.00 AUD</option>
-                    <option value="opt4">opt4 $80.00 AUD</option>
-                    <option value="opt5">opt5 $100.00 AUD</option>
-                    <option value="opt6">opt6 $130.00 AUD</option>
-                    <option value="opt7">opt7 $150.00 AUD</option>
-                    <option value="opt8">opt8 $200.00 AUD</option>
-                    <option value="opt9">opt9 $300.00 AUD</option>
-                    <option value="opt10">opt10 $0.50 AUD</option>
+                    <option value="c20">c20 $20.00 AUD</option>
+                    <option value="c40">c40 $40.00 AUD</option>
+                    <option value="c60">c60 $60.00 AUD</option>
+                    <option value="c80">c80 $80.00 AUD</option>
+                    <option value="c100">c100 $100.00 AUD</option>
+                    <option value="c130">c130 $130.00 AUD</option>
+                    <option value="c150">c150 $150.00 AUD</option>
+                    <option value="c200">c200 $200.00 AUD</option>
+                    <option value="c300">c300 $300.00 AUD</option>
+                    <option value="c050">c050 $0.50 AUD</option>
                   </select> </td>
               </tr>
             </table>
@@ -282,7 +334,33 @@
             <img alt="" border="0" src="https://www.paypalobjects.com/en_AU/i/scr/pixel.gif" width="1" height="1">
           </form>
 
-
+          <form id='contribWithGrounds' style="visibility: hidden;" action="https://www.paypal.com/cgi-bin/webscr"
+            method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="KZQDD2PU8PYJW">
+            <table>
+              <tr>
+                <td><input type="hidden" name="on0" value="Contribution50">Contribution50</td>
+              </tr>
+              <tr>
+                <td><select name="os0">
+                    <option value="c70">c70 $70.00 AUD</option>
+                    <option value="c90">c90 $90.00 AUD</option>
+                    <option value="c110">c110 $110.00 AUD</option>
+                    <option value="c130">c130 $130.00 AUD</option>
+                    <option value="c150">c150 $150.00 AUD</option>
+                    <option value="c180">c180 $180.00 AUD</option>
+                    <option value="c200">c200 $200.00 AUD</option>
+                    <option value="c250">c250 $250.00 AUD</option>
+                    <option value="c350">c350 $350.00 AUD</option>
+                  </select> </td>
+              </tr>
+            </table>
+            <input type="hidden" name="currency_code" value="AUD">
+            <input type="image" src="https://www.paypalobjects.com/en_AU/i/btn/btn_paynowCC_LG.gif" border="0"
+              name="submit" alt="PayPal – The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_AU/i/scr/pixel.gif" width="1" height="1">
+          </form>
         </div>
       </div>
       <footer class="demo-footer mdl-mini-footer">
@@ -300,6 +378,35 @@
     integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
   <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <script>
+
+    var optForm = {};
+
+    var contribExtraForm = $("#contribWithGrounds");
+    var contribExtraFormOptions = $("#contribWithGrounds option").toArray();
+    var contribExtraPairs = contribExtraFormOptions.
+      map(function (it) {
+        return [it, it.value.substring(1)];
+      });
+
+    contribExtraPairs.forEach(function (item, index) {
+      optForm[item[1]] = { "form": contribExtraForm[0], "option": item[0] };
+    });
+
+
+    var contribOnlyForm = $("#contribOnly");
+    var contribOnlyFormOptions = $("#contribOnly option").toArray();
+    var contribOnlyPairs = contribOnlyFormOptions.
+      map(function (it) {
+        return [it, it.value.substring(1)];
+      });
+
+    contribOnlyPairs.forEach(function (item) {
+      optForm[item[1]] = { "form": contribOnlyForm[0], "option": item[0] };
+    });
+
+
+    console.dir(optForm);
+
     function UUID() {
       var uuid = (function () {
         var i,
@@ -325,15 +432,15 @@
 
     var selectedFund = "general";
     var numChildren = 1;
-    var childContribution = 60;
+    var childContribution = 100;
     var childDescription = "One Child"
     var groundMaintenance = 50;
-    var totalContribution= 110;
+    var totalContribution = 150;
 
-    var updateSuggested = function(){
+    var updateSuggested = function () {
       suggestedAmount = childContribution;
       selectedAmount = $("#childAmount").val();
-      if(selectedAmount==60 || selectedAmount==100){
+      if (selectedAmount == 60 || selectedAmount == 100) {
         setSelectedAmount(suggestedAmount);
       }
       setSuggestedAmount(suggestedAmount);
@@ -347,8 +454,8 @@
     var numChildrenChanged = function () {
       numChildren = $("#oneChild")[0].checked ? 1 : 2;
       console.log("numChildren changed:" + numChildren);
-      childContribution = numChildren==1?60:100;
-      childDescription = numChildren==1?"One Child":"More than one child";
+      childContribution = numChildren == 1 ? 60 : 100;
+      childDescription = numChildren == 1 ? "One Child" : "More than one child";
       updateSuggested();
       updateSummary();
     }
@@ -358,6 +465,7 @@
       console.log("groundMaintenance changed:" + groundMaintenance);
       updateSummary();
     }
+
 
     var amountClicked = function (event) {
       var target = $(event.target);
@@ -369,28 +477,28 @@
       updateSummary();
     }
 
-    var setSuggestedAmount= function(amount){
+    var setSuggestedAmount = function (amount) {
       $("#amount li").removeClass("suggested");
-      $("#amount li[value='"+amount+"']")
+      $("#amount li[value='" + amount + "']")
         .addClass("suggested");
     }
 
-    var setSelectedAmount= function(amount){
+    var setSelectedAmount = function (amount) {
       $("#amount li").removeClass("selected");
-      $("#amount li[value='"+amount+"']")
+      $("#amount li[value='" + amount + "']")
         .addClass("selected");
-      $("#childAmount").val(amount)  
+      $("#childAmount").val(amount)
     }
 
     var action = $("#payButton").attr('action');
     $("#payButton").attr('action', action + "?custom=" + UUID());
-    
-    var updateSummary = function(){
+
+    var updateSummary = function () {
       $("#childType").text(childDescription);
       var childAmount = $("#childAmount").val();
       $("#suggestedContribution").text(childAmount)
       $("#groundsContribution").text(groundMaintenance)
-      totalContribution = Number(childAmount)+Number(groundMaintenance);
+      totalContribution = Number(childAmount) + Number(groundMaintenance);
       $("#totalContribution").text(totalContribution)
     }
     setSelectedAmount(childContribution);
@@ -398,6 +506,19 @@
     updateSummary();
 
 
+    var submitContribution = function (event) {
+      event.preventDefault();
+      fetch('https://ermingtonparents.net/contrib.php', {
+        method: 'post',
+        body: new FormData(document.getElementById('contribForm'))
+      }).then(function (text) {
+        // <!DOCTYPE ....
+        console.log(text);
+        console.dir(optForm[totalContribution]);
+      });;
+
+
+    }
   </script>
 </body>
 
